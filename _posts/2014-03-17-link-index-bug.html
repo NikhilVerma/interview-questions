@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Link index bug"
+date:   2014-03-17 12:27:18
+categories:
+---
+
+<textarea id="codemirror-html">
+<a href="#">Link 1</a> <br/>
+<a href="#">Link 2</a>
+</textarea>
+
+<textarea id="codemirror-js">
+var as = document.getElementsByTagName('a');
+for (var i = as.length; i--;) {
+    as[i].onclick = function() {
+        console.log(i);
+        return false;
+    };
+}
+</textarea>

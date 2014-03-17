@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Array Value Bug"
+date:   2014-03-17 12:27:17
+categories:
+---
+
+<textarea id="codemirror-js">
+Object.prototype.jack = {};
+
+var a = [1,2,3];
+
+for ( var number in a ) {
+    console.log(number);
+}
+</textarea>
