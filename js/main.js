@@ -4,7 +4,7 @@ $(function () {
     if (jsMirrorElement) {
         var jsMirror = window.jsmc = window.CodeMirror.fromTextArea(jsMirrorElement, {
             mode: 'javascript',
-            theme: 'monokai',
+            theme: 'monokai js',
             indentUnit: 4,
             lineNumbers: true,
             gutters: ["CodeMirror-lint-markers"],
@@ -14,21 +14,11 @@ $(function () {
         });
     }
 
-    var htmlMirrorElement = $('#codemirror-html').get(0);
-    if (htmlMirrorElement) {
-        var htmlMirror = window.jsmc = window.CodeMirror.fromTextArea(htmlMirrorElement, {
-            mode: 'xml',
-            theme: 'monokai',
-            indentUnit: 4,
-            lineNumbers: true
-        });
-    }
-
     var cssMirrorElement = $('#codemirror-css').get(0);
     if (cssMirrorElement) {
         var cssMirror = window.jsmc = window.CodeMirror.fromTextArea(cssMirrorElement, {
             mode: 'css',
-            theme: 'monokai',
+            theme: 'monokai css',
             indentUnit: 4,
             lineNumbers: true
         });
@@ -38,7 +28,7 @@ $(function () {
 
     $("#run").on('click', function () {
         var js = jsMirror ? jsMirror.getValue() : '';
-        var html = htmlMirror ? htmlMirror.getValue() : '';
+        var html = $('textarea.html').val();
         var css = cssMirror ? cssMirror.getValue() : '';
 
         iframe.contentWindow.document.open('text/html', 'replace');

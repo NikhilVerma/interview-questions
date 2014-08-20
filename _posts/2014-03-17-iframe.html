@@ -5,12 +5,17 @@ date:   2014-03-17 12:27:10
 categories:
 ---
 
-<textarea id="codemirror-html">
-<button id="run">Change Run to Go</button>
+<textarea class="html">
+<iframe style="width: 100%; display: block; height: 300px;" src="https://dl.dropboxusercontent.com/u/346618/test.html"></iframe>
+<br/>
+<button id="modify">Modify!</button>
 </textarea>
 
 <textarea id="codemirror-js">
-$('#run').on('click', function () {
+var win = $('iframe').get(0).contentWindow;
+var doc = $('iframe').get(0).contentDocument;
+
+$('#modify').on('click', function () {
 
 });
 </textarea>

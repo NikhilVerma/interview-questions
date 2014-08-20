@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "Click Bind"
+date:   2014-03-17 12:27:15
+categories:
+---
+
+<textarea class="html">
+<button id="clickme">Click me!</button>
+</textarea>
+
+<textarea id="codemirror-js">
+var myObject = {
+    init: function () {
+        alert(this.name);
+    },
+
+    name: 'My Object'
+};
+
+$('#clickme').on('click', myObject.init);
+</textarea>
